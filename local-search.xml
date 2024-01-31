@@ -8,7 +8,7 @@
     <link href="/2024/01/30/test/"/>
     <url>/2024/01/30/test/</url>
     
-    <content type="html"><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>$\text{Genshin!}$</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;I AK IOI&quot;</span>); <span class="hljs-comment">// 代码块</span><br></code></pre></td></tr></table></figure><script type="math/tex; mode=display">\int \frac{dx}{a^2+x^2} = \frac{1}{a} \arctan \frac{x}{a} + C</script><blockquote><p>hello</p></blockquote><ul><li>test</li></ul><p><img src="/img/test_img/2.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><p><span class="math inline">\(\text{Genshin!}\)</span></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;I AK IOI&quot;</span>); <span class="hljs-comment">// 代码块</span><br></code></pre></td></tr></table></figure><p><span class="math display">\[\int \frac{dx}{a^2+x^2} = \frac{1}{a} \arctan \frac{x}{a} + C\]</span></p><blockquote><p>hello</p></blockquote><ul><li>test</li></ul><p><img src="/img/test_img/2.png" /></p>]]></content>
     
     
     
