@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>在 Unity C# 中使用 Json</title>
+    <link href="/2024/03/08/%E5%9C%A8%20Unity%20C#%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Json/"/>
+    <url>/2024/03/08/%E5%9C%A8%20Unity%20C#%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Json/</url>
+    
+    <content type="html"><![CDATA[<p>本教程使用 <code>Newtonsoft.Json</code> 进行操作。</p><h2 id="安装">安装</h2><p>在 Unity 中，点击上方的 <code>Window</code>，然后选 <code>Package Manager</code>，点击左上角 ➕，再选 <code>Add package from git URL</code>，输入 <code>com.unity.nuget.newtonsoft-json</code> 即可下载。</p><h2 id="使用（简单实例）">使用（简单实例）</h2><p>本实例实现了 <code>json</code> 列表的读入与操作。</p><p>首先</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-keyword">using</span> Newtonsoft.Json;<br><span class="hljs-keyword">using</span> Newtonsoft.Json.Linq;<br></code></pre></td></tr></table></figure><p>然后读入 <code>json</code> 文件（存的是一系列 <code>json</code> 组成的 <code>json</code> 列表）为字符串：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-built_in">string</span> jsonStr = File.ReadAllText(path);<br></code></pre></td></tr></table></figure><p>然后转为 <code>JArray</code>：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c#">JArray jsonArray = JArray.Parse(jsonStr);<br></code></pre></td></tr></table></figure><p>然后遍历并进行操作即可：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-keyword">foreach</span> (JObject json <span class="hljs-keyword">in</span> jsonArray)<br>&#123;<br>    <span class="hljs-built_in">string</span> xxx = json[<span class="hljs-string">&quot;xxx&quot;</span>].ToString(); <span class="hljs-comment">// 访问属性</span><br>    xxxList.Add(JsonConvert.DeserializeObject&lt;XXX&gt;(json.ToString())); <span class="hljs-comment">// 加入容器</span><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>env</tag>
+      
+      <tag>Unity</tag>
+      
+      <tag>C#</tag>
+      
+      <tag>Json</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux Ubuntu 配置 Neo4j</title>
     <link href="/2024/02/07/Linux%20Ubuntu%20%E9%85%8D%E7%BD%AE%20Neo4j/"/>
     <url>/2024/02/07/Linux%20Ubuntu%20%E9%85%8D%E7%BD%AE%20Neo4j/</url>
