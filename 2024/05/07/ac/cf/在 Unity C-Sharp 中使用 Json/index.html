@@ -16,22 +16,23 @@
   <meta name="author" content="Tenshi">
   <meta name="keywords" content="">
   
-    <meta name="description" content="点击链接进入，在 Adding the Debian repository 下选择需要的版本，执行相应的 wget 命令即可，例如： 123wget -O - https:&#x2F;&#x2F;debian.neo4j.com&#x2F;neotechnology.gpg.key | sudo apt-key add -echo &amp;#x27;deb https:&#x2F;&#x2F;debian.neo4j.com stable 4.4&amp;#x">
+    <meta name="description" content="本教程使用 Newtonsoft.Json 进行操作。 安装 在 Unity 中，点击上方的 Window，然后选 Package Manager，点击左上角 ➕，再选 Add package from git URL，输入 com.unity.nuget.newtonsoft-json 即可下载。 使用（简单实例） 本实例实现了 json 列表的读入与操作。 首先 12using Newtons">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux Ubuntu 配置 Neo4j">
-<meta property="og:url" content="https://tenshi0x0.github.io/2024/02/07/Linux%20Ubuntu%20%E9%85%8D%E7%BD%AE%20Neo4j/index.html">
+<meta property="og:title" content="CF594D REQ">
+<meta property="og:url" content="https://tenshi0x0.github.io/2024/05/07/ac/cf/%E5%9C%A8%20Unity%20C-Sharp%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Json/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="点击链接进入，在 Adding the Debian repository 下选择需要的版本，执行相应的 wget 命令即可，例如： 123wget -O - https:&#x2F;&#x2F;debian.neo4j.com&#x2F;neotechnology.gpg.key | sudo apt-key add -echo &amp;#x27;deb https:&#x2F;&#x2F;debian.neo4j.com stable 4.4&amp;#x">
+<meta property="og:description" content="本教程使用 Newtonsoft.Json 进行操作。 安装 在 Unity 中，点击上方的 Window，然后选 Package Manager，点击左上角 ➕，再选 Add package from git URL，输入 com.unity.nuget.newtonsoft-json 即可下载。 使用（简单实例） 本实例实现了 json 列表的读入与操作。 首先 12using Newtons">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-07T05:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-07T12:39:23.213Z">
+<meta property="article:published_time" content="2024-05-07T04:00:00.000Z">
+<meta property="article:modified_time" content="2024-05-07T04:10:32.067Z">
 <meta property="article:author" content="Tenshi">
-<meta property="article:tag" content="env">
+<meta property="article:tag" content="cf">
+<meta property="article:tag" content="DS">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Linux Ubuntu 配置 Neo4j - Hexo</title>
+  <title>CF594D REQ - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux Ubuntu 配置 Neo4j"></span>
+            <span id="subtitle" data-typed-text="CF594D REQ"></span>
           
         </div>
 
@@ -210,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-07 00:00" pubdate>
-          February 7, 2024 am
+        <time datetime="2024-05-07 00:00" pubdate>
+          May 7, 2024 am
         </time>
       </span>
     
@@ -222,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          178 words
+          147 words
         
       </span>
     
@@ -270,23 +271,24 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Linux Ubuntu 配置 Neo4j</h1>
+            <h1 id="seo-header">CF594D REQ</h1>
             
             
               <div class="markdown-body">
                 
-                <p>点击<a target="_blank" rel="noopener" href="https://debian.neo4j.com/?_gl=1*jhcfvu*_ga*MTg1NjgwMTUzLjE3MDczMDUyMzM.*_ga_DL38Q8KGQC*MTcwNzMwNTIzMS4xLjEuMTcwNzMwNTk3MS4wLjAuMA..&amp;_ga=2.155722104.292814952.1707305238-185680153.1707305233">链接</a>进入，在 <code>Adding the Debian repository</code> 下选择需要的版本，执行相应的 <code>wget</code> 命令即可，例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;deb https://debian.neo4j.com stable 4.4&#x27;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/neo4j.list<br>sudo apt-get update<br></code></pre></td></tr></table></figure>
-<p>然后打开 <code>/etc/apt/sources.list</code> 文件。</p>
-<p>在任何位置（我选择在最上面）添加</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">deb</span> https://debian.neo4j.com stable <span class="hljs-number">4</span>.<span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-<p>记得替换 <code>stable</code> 和 <code>4.4</code> 为你想要的 Neo4j 版本。（上面是我的配置）</p>
-<p>再依次执行</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-built_in">get</span> update<br>sudo apt-<span class="hljs-built_in">get</span> install neo4j<br></code></pre></td></tr></table></figure>
-<p>用 <code>neo4j --version</code> 检测是不是安装好了。</p>
-<p>最后修改文件 <code>/etc/neo4j/neo4j.conf</code>，将 <code>#dbms.default_listen_address=0.0.0.0</code> 行和</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-id">#dbms</span><span class="hljs-selector-class">.connector</span><span class="hljs-selector-class">.http</span>.listen_address=:<span class="hljs-number">7474</span><br><span class="hljs-selector-id">#dbms</span><span class="hljs-selector-class">.connector</span><span class="hljs-selector-class">.http</span>.advertised_address=:<span class="hljs-number">7474</span><br></code></pre></td></tr></table></figure>
-<p>两行的注释删掉（也就是删掉 <code>#</code>）即可。（因为我需要在服务器上跑）</p>
+                <p>本教程使用 <code>Newtonsoft.Json</code> 进行操作。</p>
+<h2 id="安装">安装</h2>
+<p>在 Unity 中，点击上方的 <code>Window</code>，然后选 <code>Package Manager</code>，点击左上角 ➕，再选 <code>Add package from git URL</code>，输入 <code>com.unity.nuget.newtonsoft-json</code> 即可下载。</p>
+<h2 id="使用（简单实例）">使用（简单实例）</h2>
+<p>本实例实现了 <code>json</code> 列表的读入与操作。</p>
+<p>首先</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-keyword">using</span> Newtonsoft.Json;<br><span class="hljs-keyword">using</span> Newtonsoft.Json.Linq;<br></code></pre></td></tr></table></figure>
+<p>然后读入 <code>json</code> 文件（存的是一系列 <code>json</code> 组成的 <code>json</code> 列表）为字符串：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-built_in">string</span> jsonStr = File.ReadAllText(path);<br></code></pre></td></tr></table></figure>
+<p>然后转为 <code>JArray</code>：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c#">JArray jsonArray = JArray.Parse(jsonStr);<br></code></pre></td></tr></table></figure>
+<p>然后遍历并进行操作即可：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c#"><span class="hljs-keyword">foreach</span> (JObject json <span class="hljs-keyword">in</span> jsonArray)<br>&#123;<br>    <span class="hljs-built_in">string</span> xxx = json[<span class="hljs-string">&quot;xxx&quot;</span>].ToString(); <span class="hljs-comment">// 访问属性</span><br>    xxxList.Add(JsonConvert.DeserializeObject&lt;XXX&gt;(json.ToString())); <span class="hljs-comment">// 加入容器</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -299,7 +301,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/env/" class="print-no-link">#env</a>
+        <a href="/tags/cf/" class="print-no-link">#cf</a>
+      
+        <a href="/tags/DS/" class="print-no-link">#DS</a>
       
     </div>
   
@@ -311,8 +315,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux Ubuntu 配置 Neo4j</div>
-      <div>https://tenshi0x0.github.io/2024/02/07/Linux Ubuntu 配置 Neo4j/</div>
+      <div>CF594D REQ</div>
+      <div>https://tenshi0x0.github.io/2024/05/07/ac/cf/在 Unity C-Sharp 中使用 Json/</div>
     </div>
     <div class="license-meta">
       
@@ -324,7 +328,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>February 7, 2024</div>
+          <div>May 7, 2024</div>
         </div>
       
       
@@ -356,18 +360,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/08/%E5%9C%A8%20Unity%20C-Sharp%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Json/" title="在 Unity C# 中使用 Json">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">在 Unity C# 中使用 Json</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/30/test/" title="test">
-                        <span class="hidden-mobile">test</span>
+                      <a href="/2024/03/08/%E5%9C%A8%20Unity%20C-Sharp%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20Json/" title="在 Unity C# 中使用 Json">
+                        <span class="hidden-mobile">在 Unity C# 中使用 Json</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
