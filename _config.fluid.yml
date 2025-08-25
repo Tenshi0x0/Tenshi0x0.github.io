@@ -998,7 +998,7 @@ about:
 #---------------------------
 page:
   banner_img: /assets/imgs/Furina.png
-  banner_img_height: 60
+  banner_img_height: 75
   banner_mask_alpha: 0.3
 
 
