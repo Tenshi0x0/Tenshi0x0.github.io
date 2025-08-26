@@ -36,3 +36,18 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+### My test
+
+<details>
+
+<summary>展开</summary>
+
+```cpp
+int C(int a, int b){
+	if(b<0 || b>a) return 0;
+	return 1LL*fac[a]*invfac[b]%mod*invfac[a-b]%mod;
+}
+```
+
+</details>
