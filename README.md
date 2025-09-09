@@ -1,1 +1,1 @@
-[博客链接](https://tenshi0x0.github.io/)
+[Blog link](https://tenshi0x0.github.io/)
