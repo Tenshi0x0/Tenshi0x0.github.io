@@ -918,7 +918,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /assets/imgs/btr.png
+  banner_img: /assets/imgs/btr3.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -929,7 +929,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /assets/imgs/btr2.png
+  banner_img: /assets/imgs/cerydra.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -958,7 +958,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /assets/imgs/Herta.png
+  banner_img: /assets/imgs/mujica.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -997,7 +997,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /assets/imgs/Furina.png
+  banner_img: /assets/imgs/arc.png
   banner_img_height: 75
   banner_mask_alpha: 0.3
 
@@ -1008,7 +1008,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /assets/imgs/Furina.png
+  banner_img: /assets/imgs/404.jpg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
