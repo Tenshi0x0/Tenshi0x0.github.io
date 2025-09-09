@@ -4,9 +4,8 @@ date: 2025-08-25 21:00:00
 categories:
   - CP
   - AtCoder 题解
-# tags:
-#   - DP
-#   - 计算几何
+tags:
+  - 解题合集
 mathjax: true
 ---
 
