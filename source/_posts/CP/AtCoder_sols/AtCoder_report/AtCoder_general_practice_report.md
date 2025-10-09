@@ -225,6 +225,99 @@ signed main(){
 
 </details>
 
+### ABC389E
+
+- 贪心取，每个产品价格是无穷序列：$x, 3x, 5x ...$，那便是从 $n$ 个序列合并后的无穷升序序列 $A$ 中取数并最大化个数。
+- 最优策略肯定是 $A$ 一个前缀。
+- 从另一个角度看这个策略（即选取顺序）的特征发现：是依次把价格 $= 0, 1, 2 ...$ 的商品买空，直到边界，这支持二分。
+
+<details>
+
+<summary>展开</summary>
+
+```cpp
+// Problem: E - Square Price
+// Contest: AtCoder - Toyota Programming Contest  2025（AtCoder Beginner Contest 389)
+// URL: https://atcoder.jp/contests/abc389/tasks/abc389_e
+// Memory Limit: 1024 MB
+// Time Limit: 2000 ms
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
+#include<bits/stdc++.h>
+using namespace std;
+ 
+#define debug(x) cerr << #x << ": " << (x) << endl
+#define rep(i,a,b) for(int i=(a);i<=(b);i++)
+#define dwn(i,a,b) for(int i=(a);i>=(b);i--)
+#define SZ(a) ((int) (a).size())
+#define pb push_back
+#define all(x) (x).begin(), (x).end()
+ 
+#define x first
+#define y second
+#define int long long
+using pii = pair<int, int>;
+using ll = long long;
+using lll = __int128;
+ 
+inline void read(int &x){
+    int s=0; x=1;
+    char ch=getchar();
+    while(ch<'0' || ch>'9') {if(ch=='-')x=-1;ch=getchar();}
+    while(ch>='0' && ch<='9') s=(s<<3)+(s<<1)+ch-'0',ch=getchar();
+    x*=s;
+}
+
+const int N=2e5+5;
+
+int n, m;
+int w[N];
+int tmp, b[N];
+lll last;
+
+bool ok(int lim){
+	tmp=0;
+	last=m;
+	rep(i, 1, n){
+		int x=w[i];
+		int t=(lim+x)/(x*2);
+		tmp+=t;
+		last-=(lll)t*t*x;
+		b[i]=(t*2+1)*x;
+		if(last<0) return false;
+	}
+	return true;
+}
+
+void solve(){
+	cin>>n>>m;
+	rep(i, 1, n) read(w[i]);
+	int l=0, r=m;
+	while(l<r){
+		int mid=l+r+1>>1;
+		if(ok(mid)) l=mid;
+		else r=mid-1;
+	}
+	ok(l);
+	int res=tmp;
+	// debug(res);
+	sort(b+1, b+1+n);
+	rep(i, 1, n) if(last>=b[i]){
+		last-=b[i];
+		++res;
+	}
+	cout<<res<<"\n";
+}
+
+signed main(){
+	solve();	
+	return 0;
+}
+```
+
+</details>
+
 <!--
 <details>
 
