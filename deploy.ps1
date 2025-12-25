@@ -30,9 +30,14 @@ try {
   git push -u origin source
 
   # 生成并部署站点
-  hexo clean
-  hexo generate
-  hexo deploy
+  $hexoCmd = Join-Path $PSScriptRoot 'node_modules/.bin/hexo.cmd' # Use project-local Hexo to avoid PATH issues
+  if (-not (Test-Path $hexoCmd)) {
+    throw "Hexo binary not found. Run 'npm install' in $PSScriptRoot."
+  }
+
+  & $hexoCmd clean
+  & $hexoCmd generate
+  & $hexoCmd deploy
 
   Write-Host "Blog deployed successfully!" -ForegroundColor Green
 }
