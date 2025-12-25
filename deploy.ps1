@@ -35,9 +35,14 @@ try {
   git push -u origin source
 
   # 生成并部署站点
-  $hexoCmd = Join-Path $scriptDir 'node_modules/.bin/hexo.cmd' # Use project-local Hexo to avoid PATH issues
+  $hexoCmd = Join-Path -Path $scriptDir -ChildPath 'node_modules/.bin/hexo.cmd' # Use project-local Hexo to avoid PATH issues
+  Write-Host "Using Hexo binary: $hexoCmd"
   if ([string]::IsNullOrWhiteSpace($hexoCmd) -or -not (Test-Path -LiteralPath $hexoCmd)) {
-    throw "Hexo binary not found. Run 'npm install' in $scriptDir."
+    Write-Host "Hexo binary missing. Running npm install..." -ForegroundColor Yellow
+    npm install
+    if (-not (Test-Path -LiteralPath $hexoCmd)) {
+      throw "Hexo binary not found after npm install. Check dependencies in $scriptDir."
+    }
   }
 
   & $hexoCmd clean
