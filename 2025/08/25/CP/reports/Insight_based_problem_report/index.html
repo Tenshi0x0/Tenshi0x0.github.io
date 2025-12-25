@@ -19,16 +19,16 @@
   <meta name="author" content="Tenshi">
   <meta name="keywords" content="">
   
-    <meta name="description" content="简介此文为本人泛刷思维题的简要题解，用以记录一些思维精彩的题。  折叠的代码中有原题链接方便跳转。  正文Luogu_P6075题目中  个元素可以看作  种颜色。关键在于注意到每种颜色是独立的，可以分开考虑。 对于一种颜色，在图上染色的轮廓应为左上部分染而右下不染，而每种方案正好对应一条从左下角点出发到达对角线的右上顶点的路径。 如图所示：  由于每条路径都是等长的，而且每次都有向上或者向右两种">
+    <meta name="description" content="简介此文为本人泛刷思维题的简要题解，用以记录一些思维精彩的题。  折叠的代码中有原题链接方便跳转。（实现过于简单的题直接提供链接）  正文Luogu_P6075link 题目中  个元素可以看作  种颜色。关键在于注意到每种颜色是独立的，可以分开考虑。 对于一种颜色，在图上染色的轮廓应为左上部分染而右下不染，而每种方案正好对应一条从左下角点出发到达对角线的右上顶点的路径。 如图所示：  由于每条路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="思维题泛刷记录">
 <meta property="og:url" content="https://tenshi0x0.github.io/2025/08/25/CP/reports/Insight_based_problem_report/index.html">
 <meta property="og:site_name" content="Tenshi&#39;s Blog">
-<meta property="og:description" content="简介此文为本人泛刷思维题的简要题解，用以记录一些思维精彩的题。  折叠的代码中有原题链接方便跳转。  正文Luogu_P6075题目中  个元素可以看作  种颜色。关键在于注意到每种颜色是独立的，可以分开考虑。 对于一种颜色，在图上染色的轮廓应为左上部分染而右下不染，而每种方案正好对应一条从左下角点出发到达对角线的右上顶点的路径。 如图所示：  由于每条路径都是等长的，而且每次都有向上或者向右两种">
+<meta property="og:description" content="简介此文为本人泛刷思维题的简要题解，用以记录一些思维精彩的题。  折叠的代码中有原题链接方便跳转。（实现过于简单的题直接提供链接）  正文Luogu_P6075link 题目中  个元素可以看作  种颜色。关键在于注意到每种颜色是独立的，可以分开考虑。 对于一种颜色，在图上染色的轮廓应为左上部分染而右下不染，而每种方案正好对应一条从左下角点出发到达对角线的右上顶点的路径。 如图所示：  由于每条路">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tenshi0x0.github.io/2025/08/25/CP/reports/Insight_based_problem_report/Luogu_P6075_1.png">
 <meta property="article:published_time" content="2025-08-26T01:00:00.000Z">
-<meta property="article:modified_time" content="2025-12-25T21:42:09.517Z">
+<meta property="article:modified_time" content="2025-12-25T22:14:09.132Z">
 <meta property="article:author" content="Tenshi">
 <meta property="article:tag" content="解题合集">
 <meta name="twitter:card" content="summary_large_image">
@@ -337,7 +337,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          183 字
+          197 字
         
       </span>
     
@@ -392,9 +392,10 @@ mjx-container[display="true"] + br {
                 
                 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>此文为本人泛刷思维题的简要题解，用以记录一些思维精彩的题。</p>
 <blockquote>
-<p>折叠的代码中有原题链接方便跳转。</p>
+<p>折叠的代码中有原题链接方便跳转。（实现过于简单的题直接提供链接）</p>
 </blockquote>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Luogu-P6075"><a href="#Luogu-P6075" class="headerlink" title="Luogu_P6075"></a>Luogu_P6075</h3><p>题目中 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 个元素可以看作 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 种颜色。关键在于注意到每种颜色是独立的，可以分开考虑。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Luogu-P6075"><a href="#Luogu-P6075" class="headerlink" title="Luogu_P6075"></a>Luogu_P6075</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6075">link</a></p>
+<p>题目中 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 个元素可以看作 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 种颜色。关键在于注意到每种颜色是独立的，可以分开考虑。</p>
 <p>对于一种颜色，在图上染色的轮廓应为左上部分染而右下不染，而每种方案正好对应一条从左下角点出发到达对角线的右上顶点的路径。</p>
 <p>如图所示：</p>
 <p><img src="Luogu_P6075_1.png" srcset="/img/loading.gif" lazyload width="35%" alt=""></p>
@@ -489,12 +490,18 @@ mjx-container[display="true"] + br {
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2025/08/25/CP/AtCoder_sols/AtCoder_report/AtCoder_general_practice_report/" title="AtCoder 泛刷记录">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">AtCoder 泛刷记录</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/08/25/CP/AtCoder_sols/AtCoder_report/AtCoder_general_practice_report/" title="AtCoder 泛刷记录">
-                        <span class="hidden-mobile">AtCoder 泛刷记录</span>
+                      <a href="/2025/08/24/CP/CF_sols/CF934/" title="CF934 题解">
+                        <span class="hidden-mobile">CF934 题解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
