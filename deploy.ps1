@@ -21,7 +21,26 @@ try {
     }
   }
 
+  # 若工作区有改动，先暂存，避免 rebase 被拒
+  $stashed = $false
+  $stashName = "deploy-temp-{0:yyyyMMddHHmmss}" -f (Get-Date)
+  git diff --quiet
+  $hasTrackedChanges = $LASTEXITCODE -ne 0
+  $hasUntracked = -not [string]::IsNullOrWhiteSpace((git ls-files --others --exclude-standard | Select-Object -First 1))
+  if ($hasTrackedChanges -or $hasUntracked) {
+    Write-Host "Working tree not clean; stashing changes ($stashName) before pull..." -ForegroundColor Yellow
+    git stash push -u -m $stashName | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "git stash push failed" }
+    $stashed = $true
+  }
+
   git pull --rebase origin source
+  if ($LASTEXITCODE -ne 0) { throw "git pull --rebase origin source failed" }
+
+  if ($stashed) {
+    git stash pop
+    if ($LASTEXITCODE -ne 0) { throw "git stash pop failed; please resolve conflicts manually." }
+  }
 
   # 提交源码改动（若有）
   git add -A
@@ -35,7 +54,8 @@ try {
   git push -u origin source
 
   # 生成并部署站点
-  $hexoCmd = Join-Path -Path $scriptDir -ChildPath 'node_modules/.bin/hexo.cmd' # Use project-local Hexo to avoid PATH issues
+  Write-Host "Script directory: $scriptDir"
+  $hexoCmd = [IO.Path]::Combine($scriptDir, 'node_modules', '.bin', 'hexo.cmd') # Use project-local Hexo to avoid PATH issues
   Write-Host "Using Hexo binary: $hexoCmd"
   if ([string]::IsNullOrWhiteSpace($hexoCmd) -or -not (Test-Path -LiteralPath $hexoCmd)) {
     Write-Host "Hexo binary missing. Running npm install..." -ForegroundColor Yellow
