@@ -1,7 +1,12 @@
 $ErrorActionPreference = 'Stop'
 
 # 始终在脚本所在目录（blog/）内执行，避免误操作外层仓库
-Push-Location $PSScriptRoot
+$scriptDir = if (-not [string]::IsNullOrWhiteSpace($PSScriptRoot)) {
+  $PSScriptRoot
+} else {
+  Split-Path -LiteralPath $MyInvocation.MyCommand.Path -Parent
+}
+Push-Location $scriptDir
 try {
   # 确保在 source 分支并与远端同步
   git fetch --all --prune
@@ -30,9 +35,9 @@ try {
   git push -u origin source
 
   # 生成并部署站点
-  $hexoCmd = Join-Path $PSScriptRoot 'node_modules/.bin/hexo.cmd' # Use project-local Hexo to avoid PATH issues
-  if (-not (Test-Path $hexoCmd)) {
-    throw "Hexo binary not found. Run 'npm install' in $PSScriptRoot."
+  $hexoCmd = Join-Path $scriptDir 'node_modules/.bin/hexo.cmd' # Use project-local Hexo to avoid PATH issues
+  if ([string]::IsNullOrWhiteSpace($hexoCmd) -or -not (Test-Path -LiteralPath $hexoCmd)) {
+    throw "Hexo binary not found. Run 'npm install' in $scriptDir."
   }
 
   & $hexoCmd clean
