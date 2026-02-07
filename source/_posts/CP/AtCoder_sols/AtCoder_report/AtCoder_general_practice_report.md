@@ -318,7 +318,96 @@ signed main(){
 
 </details>
 
+### ARC058C
+
+- 正难则反，考虑对不合法（也就是不存在 Haiku）序列计数。
+- 从范围容易想到 DP，进而想到 DP 可以被刻画为前缀 $i$ 个元素中后缀不存在 Haiku。
+- 这等价于后缀张成的所有可能值不同时存在 $X+Y+Z, Y+Z, Z$。
+- 使用状压维护即可。
+
+<details>
+
+<summary>展开</summary>
+
+```cpp
+// Problem: E - Iroha and Haiku
+// Contest: AtCoder - AtCoder Regular Contest 058
+// URL: https://atcoder.jp/contests/arc058/tasks/arc058_c
+// Memory Limit: 512 MB
+// Time Limit: 4000 ms
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
+#include<bits/stdc++.h>
+using namespace std;
+ 
+#define debug(x) cerr << #x << ": " << (x) << endl
+#define rep(i,a,b) for(int i=(a);i<=(b);i++)
+#define dwn(i,a,b) for(int i=(a);i>=(b);i--)
+#define SZ(a) ((int) (a).size())
+#define int long long
+#define vi vector<int>
+#define pb emplace_back
+#define all(x) (x).begin(), (x).end()
+ 
+#define x first
+#define y second
+using pii = pair<int, int>;
+using ll = long long;
+
+// consider ans - NG
+
+const int mod=1e9+7;
+
+int n, X, Y, Z;
+
+int add(int x, int y){
+	return (x+y+mod)%mod;
+}
+
+int mul(int x, int y){
+	return x*y%mod;
+}
+
+void solve(){
+	cin>>n>>X>>Y>>Z;
+	const int LEN=X+Y+Z, U=(1<<LEN)-1;
+	auto OK=[&](int S) -> bool{
+		return (S>>LEN-1&1) && (S>>Y+Z-1&1) && (S>>Z-1&1);
+	};
+	
+	vi f(U+1), g(U+1);
+	f[0]=1;
+	rep(i, 1, n){
+		fill(all(g), 0);
+		rep(j, 1, 10){
+			rep(S, 0, U){
+				int nS=(S<<j | 1<<j-1)&U;
+				if(!OK(nS)){
+					g[nS]=add(g[nS], f[S]);
+				}
+			}
+		}
+		swap(f, g);
+	}
+	int res=1;
+	rep(i, 1, n) res=mul(res, 10);
+	for(auto e: f) if(e) res=add(res, -e);
+	cout<<res<<"\n"; 
+}
+
+signed main(){
+	ios::sync_with_stdio(false);
+	solve();
+	return 0;
+}
+```
+
+</details>
+
 <!--
+### ARCXXX
+
 <details>
 
 <summary>展开</summary>
